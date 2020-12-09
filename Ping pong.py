@@ -1,3 +1,21 @@
+
+# I am going to code a ping pong game in python.
+# I will use turtle module.
+# I will first start by importing the module.
+# Then I will make the screen.
+# Then I will make one paddle.
+# Then the other paddle.
+# Then I will make the ball and the pen.
+# Then i want to make an introductory text.
+# I also want to track the score.
+# I want to track the movements of the paddle.
+# I also want python to notice when I press keybinds.
+# I want the main game loop to update. 
+# I need to see movements on the ball, and stop the ball and stop the ball when it hits the border.
+# I also want to write a score for each player.
+
+
+
 import turtle
 
 
@@ -145,7 +163,7 @@ while True:
         pen.write("Player A: {}  Player B: {}". format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
       
       
-# padlle and collisons
+# paddle and collisons
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
         ball.setx(340)
         ball.dx *= -1
@@ -157,8 +175,12 @@ while True:
         ball.dx *= -1
 
 
-
-
+# Errors and bugs.
+# I had some issues.
+# With my plan, the ball kept going through my paddle.
+# I had to make some codes to fix this bug.
+# The code i made was under paddle and collisons.
+# I had error such as IndentationError and Nameerrors.
     
 
 
