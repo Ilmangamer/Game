@@ -143,7 +143,7 @@ while True:
     if ball.ycor() < -290:
           ball.sety(-290)
           ball.dy *= -1 
-          fname = "C:\\VS Code\\Python\\bounce.wav"
+      
           
          
 
