@@ -1,18 +1,14 @@
+# Note to developer
 # Create the gui x
 # Add a picture. x
-# Now add a label saying: Thank you god- TyGod x
 # Create the canvases- in different colors to make it more vibrant -x
 # Create the label on the canvases. x
 # Create the options x
-# Create the submit button x
-# Add a function to the options buttons x
+# Add options to the buttons x
 # Make it so that the function does not count the click as a point. - when wrong answer x
 # Make it so that the function does count the click as a point - When the answer is correct x
+# Then make the button unclickable x
 # Determine the amount of points x
-# Create a function for the submit button. x
-# The submit button will mainly display the result of the quiz. x
-
-
 
 import tkinter as tk
 from tkinter.constants import DISABLED
@@ -30,7 +26,7 @@ root.configure(bg="grey")
 # Add it to the ImageTk PhotoImage
 # Assign it to a tk label image function
 # And place it
-load = Image.open("E:\Most used\G&D\Discord1\Yehova pic.jpg")
+load = Image.open("D:\Most used\G&D\Discord1\Yehova pic.jpg")
 Imagetkp = ImageTk.PhotoImage(load)
 ImagetkL = tk.Label(root, image=Imagetkp)
 Imagetkp.Image = Imagetkp
@@ -51,9 +47,7 @@ def DisableButton():
     Q1_opt3.config(state=DISABLED)
     Q1_opt4.config(state=DISABLED)
 
-
 # Getting and displaying result
-
 def GetDecision():
     if stringvar.get()  == "True":
         global score
@@ -61,9 +55,8 @@ def GetDecision():
         messagebox.showinfo("Congrats", message="You are correct. Score is {}".format(score))
         
     else:
-        score -= 1
+        score - 1 == 0
         messagebox.showerror("Wrong", message="You are wrong. Score is {}".format(score))
-        
 
 # Game rules in a label
 tyGodL = tk.Label(root, text="Game rules: 1 attempt -TyGod Quiz", font=("Quizzical Pitch", 25), bg="powderblue", fg="blue")
@@ -78,7 +71,7 @@ My_message_Label.place(x=0, y= 2)
 Max_points = tk.Label(root, text="6 pts available", font=("Quizzical Pitch", 15), bg="powderblue", fg="blue")
 Max_points.place(x=600, y=190)
 
-Worst_score = tk.Label(root, text="Worst score -6 pts", font=("Quizzical Pitch", 15), bg="powderblue", fg="blue")
+Worst_score = tk.Label(root, text="You have one attempt", font=("Quizzical Pitch", 15), bg="powderblue", fg="blue")
 Worst_score.place(x=600, y=230)
 
 # First canvas - made rectangle shape
@@ -91,19 +84,16 @@ Q1_Label = tk.Label(root, text="What is God's name in English?", font=("Quizzica
 Q1_Label.place(x=135, y=125)    
 
 # First four options buttons
-
 Q1_opt1 = Radiobutton(root, text="Mosah", variable=stringvar, value="False",  command=lambda: [GetDecision(), DisableButton()])
 Q1_opt2 = Radiobutton(root, text="YHVH", variable=stringvar, value="False2",  command=lambda: [GetDecision(), DisableButton()])
 Q1_opt3 = Radiobutton(root, text="YHWH", variable=stringvar, value="False3",  command=lambda: [GetDecision(), DisableButton()])
 Q1_opt4 = Radiobutton(root, text="Jehova", variable=stringvar, value="True", command=lambda: [GetDecision(), DisableButton()])
-
 
 # First four options - placing all 4 options  
 Q1_opt1.place(x=180, y=190)
 Q1_opt2.place(x=260, y=190)
 Q1_opt3.place(x=340, y=190)
 Q1_opt4.place(x=420, y=190)
-
 
 # 2nd canvas - made rectangular shape
 Canvas2 = tk.Canvas(root, bg="red", height=90, width=400)
@@ -119,7 +109,6 @@ Q2_opt2 = Radiobutton(root, text="No", variable=stringvar, value='False6', comma
 Q2_opt3 = Radiobutton(root, text="Not certain", variable=stringvar, value='False7', command=lambda: [GetDecision2(), DisableButton2()])
 Q2_opt4 = Radiobutton(root, text="Yes, \n it is written in 1.John 5:20", variable=stringvar, value='True2', command=lambda: [GetDecision2(), DisableButton2()])
 
-
 # 2nd options placement
 Q2_opt1.place(x=130, y=345)
 Q2_opt2.place(x=220, y=345)
@@ -133,22 +122,16 @@ def DisableButton2():
     Q2_opt3.config(state=DISABLED)
     Q2_opt4.config(state=DISABLED)
 
-
-
 # Getting and displaying result
 def GetDecision2():
     if stringvar.get()  == "True2":
         global score
         score += 1
         messagebox.showinfo("Congrats", message="You are correct. Score is {}".format(score))
-        
     else:
-        score -= 1
+        score - 1 == 0
         messagebox.showerror("Wrong", message="You are wrong. Score is {}".format(score))
       
-
-
-
 # 3rd Canvas, - made in rectangular shapes
 Canvas3 = tk.Canvas(root, bg = "powderblue", height=90, width=400)
 Canvas3.place(x=132, y=460)
@@ -177,7 +160,6 @@ def DisableButton3():
     Q3_opt3.config(state=DISABLED)
     Q3_opt4.config(state=DISABLED)
 
-
 # Getting and displaying result
 def GetDecision3():
     if stringvar.get()  == "True3":
@@ -186,12 +168,8 @@ def GetDecision3():
         messagebox.showinfo("Congrats", message="You are correct. Score is {}".format(score))
         
     else:
-        score -= 1
+        score - 1 == 0
         messagebox.showerror("Wrong", message="You are wrong. Score is {}".format(score))
-        
-
-
- 
 
 # 4th canvas - made rectungalar shape
 Canvas4 = tk.Canvas(root, bg= "powderblue", height=90, width=400)
@@ -213,8 +191,7 @@ Q4_opt2.place(x=965, y=190)
 Q4_opt3.place(x=1063, y=190)
 Q4_opt4.place(x=1123, y=190)
 
-
-# Diabling buttons
+# Disabling buttons
 def DisableButton4():
     Q4_opt1.config(state=DISABLED)
     Q4_opt2.config(state=DISABLED)
@@ -230,11 +207,8 @@ def GetDecision4():
         messagebox.showinfo("Congrats", message="You are correct. Score is {}".format(score))
         
     else:
-        score -= 1
+        score - 1 == 0
         messagebox.showerror("Wrong", message="You are wrong. Score is {}".format(score))
-
-
-
 
 
 # 5th canvas - made rectungalar shape
@@ -272,17 +246,10 @@ def GetDecision5():
         global score
         score += 1
         messagebox.showinfo("Congrats", message="You are correct. Score is {}".format(score))
-
-    
         
     else:
-        score -= 1
+        score - 1 == 0
         messagebox.showerror("Wrong", message="You are wrong. Score is {}".format(score))
-
-
-
-
-
 
 # 6th Canvas, - made in rectangular shapes
 Canvas6 = tk.Canvas(root, bg = "navy", height=90, width=400)
@@ -312,7 +279,6 @@ def DisableButton6():
     Q6_opt3.config(state=DISABLED)
     Q6_opt4.config(state=DISABLED)
 
-
 # Getting and displaying result
 def GetDecision6():
     if stringvar.get()  == "True6":
@@ -321,22 +287,7 @@ def GetDecision6():
         messagebox.showinfo("Congrats", message="You are correct. Score is {}".format(score))
         
     else:
-        score -= 1
+        score - 1 == 0
         messagebox.showerror("Wrong", message="You are wrong. Score is {}".format(score))
-        
-
-
-# side win
-"""
-root.configure(bg= '#198CFF')
-root.wm_attributes("-transparentcolor", '#198CFF' )
-"""
-# Point all radiobuttons to same var
-# This will make only one can be selected aka only one can be True
-# Then the rest is false
-# StringVar in general just updates any widgets
-
-# Format the score from which radiobutton the user chooses
-
 
 root.mainloop()
